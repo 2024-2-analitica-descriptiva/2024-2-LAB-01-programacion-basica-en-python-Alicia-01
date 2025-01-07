@@ -34,4 +34,5 @@ def pregunta_12():
                 else:
                     diccionario[letra_columna_1] = suma_columna_5
     return diccionario
+
 print(pregunta_12())
