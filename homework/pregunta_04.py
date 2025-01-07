@@ -27,7 +27,7 @@ def pregunta_04():
 
     """
     registro_mes = {}
-    with open('files\\input\\data.csv', 'r') as file:
+    with open('files/input/data.csv', 'r') as file:
         for line in file:
             columnas = line.strip(). split ('\t')
             if len(columnas) > 2:
