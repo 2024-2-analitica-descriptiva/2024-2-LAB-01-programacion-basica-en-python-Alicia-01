@@ -15,7 +15,7 @@ def pregunta_11():
     {'a': 122, 'b': 49, 'c': 91, 'd': 73, 'e': 86, 'f': 134, 'g': 35}
     """
     diccionario = {}
-    with open('files\input\data.csv', 'r') as file:
+    with open('files\\input\\data.csv', 'r') as file:
         for line in file:
             columnas = line.strip(). split ('\t')
             if len(columnas) > 4:
