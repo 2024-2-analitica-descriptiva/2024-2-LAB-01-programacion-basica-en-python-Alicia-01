@@ -24,3 +24,19 @@ def pregunta_09():
      'jjj': 18}}
 
     """
+    registros_clave = {}
+    with open('files\input\data.csv', 'r') as file:
+        for line in file:
+            columnas = line.strip(). split ('\t')
+            claves = columnas[4].split(',')
+            for clave_valor in claves:
+                clave = clave_valor.split(':')[0]
+
+                if clave in registros_clave:
+                    registros_clave[clave] += 1
+                else:
+                    registros_clave[clave] = 1
+    registros = dict(sorted(registros_clave.items()))
+    return registros
+
+print(pregunta_09())

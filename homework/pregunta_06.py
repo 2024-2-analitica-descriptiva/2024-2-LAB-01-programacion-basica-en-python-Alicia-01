@@ -26,3 +26,24 @@ def pregunta_06():
      ('jjj', 5, 17)]
 
     """
+    diccionario_valores = {}
+    with open('files\input\data.csv', 'r') as file:
+        for line in file:
+            columnas = line.strip(). split ('\t')
+            if len(columnas) > 4:
+                 diccionario_str = columnas[4].strip()
+                 claves_valores = diccionario_str.split(',')
+                 
+                 for clave_valor in claves_valores:
+                     clave, valor = clave_valor.split(':')
+                     valor = int(valor.strip())
+                     if clave not in diccionario_valores:
+                        diccionario_valores[clave] = [valor, valor]
+                     else:
+                        diccionario_valores[clave][0] = min(diccionario_valores[clave][0], valor)
+                        diccionario_valores[clave][1] = max(diccionario_valores[clave][1], valor)
+    resultado = [(clave, valores[0], valores[1]) for clave, valores in diccionario_valores.items()]
+    resultado.sort()
+
+    return resultado
+print(pregunta_06())

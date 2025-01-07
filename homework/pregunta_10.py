@@ -18,5 +18,18 @@ def pregunta_10():
      ('E', 2, 3),
      ('E', 3, 3)]
 
-
     """
+    lista = []
+    with open('files\input\data.csv', 'r') as file:
+        for line in file:
+            columnas = line.strip(). split ('\t')
+            if len(columnas) > 4:
+                letra = columnas[0]
+                columna_4 = columnas[3]
+                columna_5 = columnas[4]
+
+                count_4 = len(columna_4.split(','))
+                count_5 = len(columna_5.split(','))
+                lista.append((letra, count_4, count_5))
+    return lista
+print(pregunta_10())
